@@ -4,15 +4,18 @@ language: python
 
 # Version number
 python:
-  - 2.6
-  - 2.7
-  - 3.2
-  - 3.3
-  - 3.4
+ # - 2.6
+# - 2.7
+# - 3.2
+# - 3.3
+  #- 3.4
   - 3.5
-  - pypy
-  - pypy3
+ #- pypy
+ # - pypy3
 
 build:
   ci:
     - python --version
+  post_ci:
+    - docker build -t=shiphitchcock1/betaci_pyt_pipeline:$BRANCH.$BUILD_NUMBER .
+    - docker push shiphitchcock1/betaci_pyt_pipeline:$BRANCH.$BUILD_NUMBER
