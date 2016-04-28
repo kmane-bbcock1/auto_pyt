@@ -19,3 +19,9 @@ build:
   post_ci:
     - docker build -t=shiphitchcock1/betaci_pyt_pipeline:$BRANCH.$BUILD_NUMBER .
     - docker push shiphitchcock1/betaci_pyt_pipeline:$BRANCH.$BUILD_NUMBER
+    
+
+integrations:
+  hub:
+    - integrationName: shiphitchcock1
+      type: docker 
